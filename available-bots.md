@@ -48,10 +48,12 @@ launchctl kickstart -k gui/501/com.clawdbot.jbclawd
 | Field | Value |
 |-------|-------|
 | **Name** | JBPhoenix |
-| **Port** | 18800 |
-| **URL** | http://localhost:18800 |
-| **Launchd File** | `~/Library/LaunchAgents/com.clawdbot.phoenix.plist` |
-| **Working Directory** | `~/.clawdbot-phoenix/` |
+| **Port** | 28800 |
+| **URL** | http://localhost:28800 |
+| **Launchd File** | ~/Library/LaunchAgents/com.clawdbot.jbphoenix.plist |
+| **Start Script** | ~/.config/bj_launchd/jbphoenix-start.sh |
+| **Working Directory** | ~/.clawdbot-jbphoenix/ |
+| **Workspace** | /Users/bjesuiter/.config/clawdbot-workspaces/jbphoenix |
 
 ### Restart Command
 
@@ -61,9 +63,10 @@ launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
 
 ### Update/Restart Procedure
 
-1. Pull latest changes (if needed):
+1. Pull latest changes:
    ```bash
-   cd ~/Develop/clawdbot && git pull && npm i && npm run build
+   cd ~/Develop/clawdbot && git pull
+   npm i && npm run build
    ```
 
 2. Restart via launchd:
@@ -72,7 +75,8 @@ launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
    ```
 
 ### Notes
-- Uses fish shell
-- Logs: `~/.clawdbot-phoenix/logs/gateway.log`
-- Config: `~/.clawdbot-phoenix/`
+- Uses fish shell via fnm's default Node.js version
+- Config: `~/.clawdbot-jbphoenix/clawdbot.json`
+- Logs: `~/.clawdbot-jbphoenix/logs/gateway.log`
+- Gateway token stored in `CLAWDBOT_GATEWAY_TOKEN` env var
 
