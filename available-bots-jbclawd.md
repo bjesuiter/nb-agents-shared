@@ -14,6 +14,8 @@ owner: self
 | **Launchd File** | ~/Library/LaunchAgents/com.clawdbot.jbclawd.plist |
 | **Start Script** | ~/.config/bj_launchd/jbclawd-start.sh |
 | **Working Directory** | ~/.clawdbot/agents/main |
+| **Config Dir** | ~/.config/clawdbot-workspaces/jbclawd/ |
+| **Workspace** | /Users/bjesuiter/.config/clawdbot-workspaces/jbclawd |
 
 ## Restart Command
 
