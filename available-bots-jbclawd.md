@@ -14,7 +14,6 @@ owner: self
 | **Launchd File** | ~/Library/LaunchAgents/com.clawdbot.jbclawd.plist |
 | **Start Script** | ~/.config/bj_launchd/jbclawd-start.sh |
 | **Working Directory** | ~/.clawdbot/agents/main |
-| **Config Dir** | ~/.config/clawdbot-workspaces/jbclawd/ |
 | **Workspace** | /Users/bjesuiter/.config/clawdbot-workspaces/jbclawd |
 
 ## Restart Command
@@ -38,6 +37,7 @@ launchctl kickstart -k gui/501/com.clawdbot.jbclawd
 
 ## Notes
 - Uses fish shell via fnm's default Node.js version
+- Config: `~/.clawdbot/`
 - Logs: `~/.clawdbot/logs/gateway.log`
 - Gateway token stored in `CLAWDBOT_GATEWAY_TOKEN` env var
 
