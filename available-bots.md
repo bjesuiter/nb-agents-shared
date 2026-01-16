@@ -24,16 +24,16 @@ launchctl kickstart -k gui/501/com.clawdbot.jbclawd
 
 ## Update/Restart Procedure
 
-1. Pull latest changes:
-   ```bash
-   cd ~/Develop/clawdbot && git pull
-   npm i && npm run build
-   ```
+### Recommended (Non-Interactive)
+```bash
+clawdbot update --restart
+```
 
-2. Restart via launchd:
-   ```bash
-   launchctl kickstart -k gui/501/com.clawdbot.jbclawd
-   ```
+### Manual Fallback
+```bash
+cd ~/Develop/clawdbot && git pull && pnpm i && pnpm build
+launchctl kickstart -k gui/501/com.clawdbot.jbclawd
+```
 
 ## Notes
 - Uses fish shell via fnm's default Node.js version
@@ -63,16 +63,16 @@ launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
 
 ### Update/Restart Procedure
 
-1. Pull latest changes:
-   ```bash
-   cd ~/Develop/clawdbot && git pull
-   npm i && npm run build
-   ```
+#### Recommended (Non-Interactive)
+```bash
+clawdbot --profile jbphoenix update --restart
+```
 
-2. Restart via launchd:
-   ```bash
-   launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
-   ```
+#### Manual Fallback
+```bash
+cd ~/Develop/clawdbot && git pull && pnpm i && pnpm build
+launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
+```
 
 ### Notes
 - Uses fish shell via fnm's default Node.js version
