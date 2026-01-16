@@ -32,7 +32,7 @@ clawdbot update --restart
 ### Manual Fallback
 ```bash
 cd ~/Develop/clawdbot && git pull && pnpm i && pnpm build
-launchctl kickstart -k gui/501/com.clawdbot.jbclawd
+clawdbot daemon restart
 ```
 
 ## Notes
