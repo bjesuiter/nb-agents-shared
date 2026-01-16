@@ -48,25 +48,6 @@ The app manages a per‑user LaunchAgent labeled `com.clawdbot.gateway` (or `com
 | **Working Directory** | ~/.clawdbot/agents/main |
 | **Workspace** | /Users/bjesuiter/.config/clawdbot-workspaces/jbclawd |
 
-## Restart Command
-
-```bash
-launchctl kickstart -k gui/501/com.clawdbot.jbclawd
-```
-
-## Update/Restart Procedure
-
-### Recommended (Non-Interactive)
-```bash
-clawdbot update --restart
-```
-
-### Manual Fallback
-```bash
-cd ~/Develop/clawdbot && git pull && pnpm i && pnpm build
-launchctl kickstart -k gui/501/com.clawdbot.gateway
-```
-
 ## Notes
 - Uses fish shell via fnm's default Node.js version
 - Config: `~/.clawdbot/`
@@ -87,25 +68,6 @@ launchctl kickstart -k gui/501/com.clawdbot.gateway
 | **Start Script** | ~/.config/bj_launchd/jbphoenix-start.sh |
 | **Working Directory** | ~/.clawdbot-jbphoenix/ |
 | **Workspace** | /Users/bjesuiter/.config/clawdbot-workspaces/jbphoenix |
-
-### Restart Command
-
-```bash
-launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
-```
-
-### Update/Restart Procedure
-
-#### Recommended (Non-Interactive)
-```bash
-clawdbot --profile jbphoenix update --restart
-```
-
-#### Manual Fallback
-```bash
-cd ~/Develop/clawdbot && git pull && pnpm i && pnpm build
-launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
-```
 
 ### Notes
 - Uses fish shell via fnm's default Node.js version
