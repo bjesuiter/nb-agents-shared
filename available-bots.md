@@ -4,6 +4,10 @@ created: 2026-01-15T09:15:00+01:00
 owner: self
 ---
 
+## LaunchAgent Naming Scheme
+
+The app manages a per‑user LaunchAgent labeled `com.clawdbot.gateway` (or `com.clawdbot.<profile>` when using `--profile` / `CLAWDBOT_PROFILE`).
+
 ## Bot Details
 
 | Field | Value |
@@ -32,7 +36,7 @@ clawdbot update --restart
 ### Manual Fallback
 ```bash
 cd ~/Develop/clawdbot && git pull && pnpm i && pnpm build
-clawdbot daemon restart
+launchctl kickstart -k gui/501/com.clawdbot.gateway
 ```
 
 ## Notes
@@ -40,6 +44,7 @@ clawdbot daemon restart
 - Config: `~/.clawdbot/`
 - Logs: `~/.clawdbot/logs/gateway.log`
 - Gateway token stored in `CLAWDBOT_GATEWAY_TOKEN` env var
+- LaunchAgent label: `com.clawdbot.gateway` (default profile)
 
 ---
 
@@ -79,4 +84,5 @@ launchctl kickstart -k gui/501/com.clawdbot.jbphoenix
 - Config: `~/.clawdbot-jbphoenix/clawdbot.json`
 - Logs: `~/.clawdbot-jbphoenix/logs/gateway.log`
 - Gateway token stored in `CLAWDBOT_GATEWAY_TOKEN` env var
+- LaunchAgent label: `com.clawdbot.jbphoenix` (custom profile)
 
