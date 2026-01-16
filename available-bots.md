@@ -4,6 +4,34 @@ created: 2026-01-15T09:15:00+01:00
 owner: self
 ---
 
+## Joint Self-Update Workflow (Both Bots)
+
+When updating Clawdbot (applies to both JBClawd and JBPhoenix):
+
+```bash
+# Step 1: Pull, build, and doctor checks (applies to default profile)
+clawdbot update
+
+# Step 2: Restart JBPhoenix first
+clawdbot --profile jbphoenix daemon restart
+
+# Step 3: Verify JBPhoenix is running and logs are clean
+tail -50 ~/.clawdbot-jbphoenix/logs/gateway.log
+tail -50 ~/.clawdbot-jbphoenix/logs/gateway.err.log
+
+# Step 4: Restart JBClawd
+clawdbot daemon restart
+```
+
+### Quick Verification Commands
+```bash
+# Check JBPhoenix status
+curl -s http://localhost:28800/health | jq
+
+# Check JBClawd status
+curl -s http://localhost:18789/health | jq
+```
+
 ## LaunchAgent Naming Scheme
 
 The app manages a per‑user LaunchAgent labeled `com.clawdbot.gateway` (or `com.clawdbot.<profile>` when using `--profile` / `CLAWDBOT_PROFILE`).
