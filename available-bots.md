@@ -9,17 +9,20 @@ owner: self
 When updating Clawdbot (applies to both JBClawd and JBPhoenix):
 
 ```bash
-# Step 1: Pull, build, and doctor checks (applies to default profile)
-clawdbot update
+# Step 1: Pull latest code
+cd ~/clawdbot && git pull
 
-# Step 2: Restart JBPhoenix first
+# Step 2: Install dependencies and build
+pnpm i && pnpm build
+
+# Step 3: Restart JBPhoenix first
 clawdbot --profile jbphoenix daemon restart
 
-# Step 3: Verify JBPhoenix is running and logs are clean
+# Step 4: Verify JBPhoenix is running and logs are clean
 tail -50 ~/.clawdbot-jbphoenix/logs/gateway.log
 tail -50 ~/.clawdbot-jbphoenix/logs/gateway.err.log
 
-# Step 4: Restart JBClawd
+# Step 5: Restart JBClawd (default profile)
 clawdbot daemon restart
 ```
 
