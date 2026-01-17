@@ -1,5 +1,5 @@
 ---
-title: agents-shared Notebook Rules
+title: Available Bots
 owner: system
 ---
 
