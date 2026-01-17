@@ -8,18 +8,22 @@
 Description: local only bot, no telegram or other external channels connected 
 Port: 18789
 Restart: clawdbot daemon restart
+Profile: (default, do not add as --profile)
 
 ## jbclawd
 
 Description: Main Bot via telegram 
 Port: 27800
 Restart: clawdbot --profile jbclawd daemon restart 
+Profile: jbclawd (use for every command when interacting with clawdbot cli for jbclawd)
 
 ## jbphoenix
 
 Description: Rescue Bot for telegram 
 Port: 28800
 Restart: clawdbot --profile jbphoenix daemon restart
+Profile: jbphoenix (use for every command when interacting with clawdbot cli for jbphoenix)
+
 
 ## Update rules for m1mini system 
 
