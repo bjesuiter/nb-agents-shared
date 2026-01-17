@@ -1,5 +1,5 @@
 
-# Instructions for Agents 
+# AGENTS.md - Instructions for Agents 
 
 ## Available agents on m1mini 
 
