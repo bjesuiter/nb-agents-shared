@@ -24,6 +24,10 @@ tail -50 ~/.clawdbot-jbphoenix/logs/gateway.err.log
 
 # Step 5: Restart JBClawd (default profile)
 clawdbot daemon restart
+
+# Step 6: Restart Helix (local-only profile) and verify
+clawdbot --profile helix daemon restart
+curl -s http://localhost:18788/health | jq
 ```
 
 ### Quick Verification Commands
